@@ -1,0 +1,120 @@
+/* ==============================
+   PALETTE E VARIABILI GLOBALI
+   ============================== */
+:root {
+  --primary: #2E8B57;       /* SeaGreen */
+  --primary-light: #20B2AA; /* LightSeaGreen */
+  --accent: #FF00FF;        /* Magenta */
+  --accent-dark: #8B008B;   /* DarkMagenta */
+  --background: #FAFAFA;
+  --text: #333333;
+}
+
+/* ==============================
+   STRUTTURA GENERALE
+   ============================== */
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--background);
+  padding: 0 20px;
+}
+
+/* ==============================
+   HEADER E NAVIGAZIONE
+   ============================== */
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 15px;
+}
+
+h1 {
+  font-size: 2.2em;
+  color: var(--primary);
+  margin-bottom: 0.2em;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ==============================
+   CONTENUTO PRINCIPALE
+   ============================== */
+main h2 {
+  color: var(--primary);
+  margin-top: 30px;
+}
+
+main p {
+  margin-bottom: 1.2em;
+}
+
+strong {
+  color: var(--primary);
+}
+
+img {
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  max-width: 150px;
+  border: 3px solid var(--primary-light);
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.9em;
+  color: #777;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+footer a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* ==============================
+   ELEMENTI EXTRA (BOTTONI, HIGHLIGHT)
+   ============================== */
+button, .btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--accent-dark);
+}
