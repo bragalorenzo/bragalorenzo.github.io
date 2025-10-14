@@ -24,7 +24,7 @@ body {
 }
 
 /* ==============================
-   HEADER E NAVIGAZIONE
+   HEADER & NAV
    ============================== */
 header {
   text-align: center;
@@ -57,7 +57,7 @@ nav a:hover {
 }
 
 /* ==============================
-   CONTENUTO PRINCIPALE
+   CONTENT
    ============================== */
 main h2 {
   color: var(--primary);
@@ -72,11 +72,10 @@ strong {
   color: var(--primary);
 }
 
-img {
+.photo {
   display: block;
   margin: 0 auto 20px
-  max-width: 150px;
-  border: 3px solid var(--primary);
+  max-width: 80%;
 }
 
 /* ==============================
@@ -102,7 +101,7 @@ footer a:hover {
 }
 
 /* ==============================
-   ELEMENTI EXTRA (BOTTONI, HIGHLIGHT)
+   BUTTONS & HIGHLIGHTS
    ============================== */
 button, .btn {
   background-color: var(--primary);
