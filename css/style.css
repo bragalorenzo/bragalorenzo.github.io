@@ -1,5 +1,5 @@
 /* ==============================
-   PALETTE E VARIABILI GLOBALI
+   PALETTE & GLOBAL VARS
    ============================== */
 :root {
   --primary: #2E8B57;       /* SeaGreen */
@@ -11,7 +11,7 @@
 }
 
 /* ==============================
-   STRUTTURA GENERALE
+   BODY STRUCTURE
    ============================== */
 body {
   font-family: system-ui, sans-serif;
@@ -54,6 +54,22 @@ nav a {
 nav a:hover {
   color: var(--accent);
   border-bottom: 2px solid var(--accent);
+}
+
+.year-nav {
+  text-align: center;
+  margin: 1.5em 0;
+  font-size: 1.1em;
+}
+
+.year-nav a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 0.5em;
+}
+
+.year-nav a:hover {
+  text-decoration: underline;
 }
 
 /* ==============================
