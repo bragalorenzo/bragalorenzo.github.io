@@ -162,6 +162,11 @@ button:hover, .btn:hover {
   margin-top: 30px;
 }
 
+.contact-emails a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
 .contact-emails p {
   margin: 5px 0;
   font-size: 1.1rem;
