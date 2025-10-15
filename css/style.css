@@ -132,3 +132,43 @@ button, .btn {
 button:hover, .btn:hover {
   background-color: var(--accent-dark);
 }
+
+/* ==============================
+   CONTACTS
+   ============================== */
+#contacts {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.contact-icon {
+  height: 60px;
+  transition: transform 0.2s ease;
+}
+
+.contact-icon:hover {
+  transform: scale(1.1);
+}
+
+.contact-emails {
+  margin-top: 30px;
+}
+
+.contact-emails p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.contact-invite {
+  margin-top: 25px;
+  font-style: italic;
+  font-size: 1.2rem;
+}
