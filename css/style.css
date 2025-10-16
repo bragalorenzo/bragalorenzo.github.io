@@ -84,6 +84,16 @@ main p {
   margin-bottom: 1.2em;
 }
 
+main a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+main a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
 strong {
   color: var(--primary);
 }
@@ -177,9 +187,3 @@ button:hover, .btn:hover {
   font-style: italic;
   font-size: 1.2rem;
 }
-
-.affiliation a:hover {
-  color: var(--primary-light);
-  text-decoration: underline;
-}
-   
