@@ -83,7 +83,7 @@ nav a:hover {
 
 .allpurpose-nav a:hover {
   color: var(--accent);
-  text-decoration: underline;
+  border-bottom: 2px solid var(--accent);
 }
 
 /* ==============================
