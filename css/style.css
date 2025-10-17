@@ -94,7 +94,8 @@ main p {
   margin-bottom: 1.2em;
 }
 
-main a {
+main a,
+main a:visited {
   color: var(--accent-dark);
   text-decoration: none;
 }
