@@ -57,42 +57,22 @@ nav a:hover {
 }
 
 /* ==============================
-   PUBLICATION YEAR NAV
+   ALL-PURPOSE NAV
    ============================== */
 
-.year-nav {
+.allpurpose-nav {
   text-align: center;
   margin: 1.5em 0;
   font-size: 1.1em;
 }
 
-.year-nav a {
+.allpurpose-nav a {
   color: #555;
   text-decoration: none;
   margin: 0 0.5em;
 }
 
-.year-nav a:hover {
-  text-decoration: underline;
-}
-
-/* ==============================
-   EDUCATION-OUTREACH NAV
-   ============================== */
-
-.edu-out-nav {
-  text-align: center;
-  margin: 1.5em 0;
-  font-size: 1.1em;
-}
-
-.edu-out-nav a {
-  color: #555;
-  text-decoration: none;
-  margin: 0 0.5em;
-}
-
-.edu-out-nav a:hover {
+.allpurpose-nav a:hover {
   text-decoration: underline;
 }
 
