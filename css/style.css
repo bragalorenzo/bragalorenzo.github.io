@@ -68,19 +68,21 @@ nav a:hover {
 }
 
 .allpurpose-nav a{
-  color: #555;
+  color: var(--primary);
   text-decoration: none;
   margin: 0 0.5em;
+   transition: color 0.2s ease, border-bottom 0.2s ease;
 }
 
 /* Visited */
 .allpurpose-nav a:visited {
-  color: #555;
+  color: var(--primary);
 }
 
 /* hover */
+
 .allpurpose-nav a:hover {
-  color: var(--primary-light);
+  color: var(--accent);
   text-decoration: underline;
 }
 
