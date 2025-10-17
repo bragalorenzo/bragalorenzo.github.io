@@ -62,7 +62,8 @@ nav a:hover {
 
 .allpurpose-nav {
   text-align: center;
-  margin: 1.5em 0;
+  margin: 1.5em auto;
+   width: 100%;
   font-size: 1.1em;
 }
 
