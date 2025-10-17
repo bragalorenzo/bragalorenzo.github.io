@@ -85,6 +85,11 @@ main h2 {
   margin-top: 30px;
 }
 
+main h3 {
+  color: var(--accent-dark);
+  margin-top: 30px;
+}
+
 main p {
   margin-bottom: 1.2em;
 }
