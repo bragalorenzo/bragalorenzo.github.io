@@ -24,7 +24,7 @@ body {
 }
 
 /* ==============================
-   HEADER & NAV
+   HEADER & MAIN NAV
    ============================== */
 header {
   text-align: center;
@@ -56,6 +56,10 @@ nav a:hover {
   border-bottom: 2px solid var(--accent);
 }
 
+/* ==============================
+   PUBLICATION YEAR NAV
+   ============================== */
+
 .year-nav {
   text-align: center;
   margin: 1.5em 0;
@@ -69,6 +73,26 @@ nav a:hover {
 }
 
 .year-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   EDUCATION-OUTREACH NAV
+   ============================== */
+
+.edu-out-nav {
+  text-align: center;
+  margin: 1.5em 0;
+  font-size: 1.1em;
+}
+
+.edu-out-nav a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 0.5em;
+}
+
+.edu-out-nav a:hover {
   text-decoration: underline;
 }
 
