@@ -67,14 +67,20 @@ nav a:hover {
   font-size: 1.1em;
 }
 
-.allpurpose-nav a,
-.allpurpose-nav a:visited {
+.allpurpose-nav a{
   color: #555;
   text-decoration: none;
   margin: 0 0.5em;
 }
 
+/* Visited */
+.allpurpose-nav a:visited {
+  color: #555;
+}
+
+/* hover */
 .allpurpose-nav a:hover {
+  color: var(--primary-light);
   text-decoration: underline;
 }
 
