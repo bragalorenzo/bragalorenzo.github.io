@@ -1,226 +1,479 @@
-/* ==============================
-   PALETTE & GLOBAL VARS
-   ============================== */
+/* ============================================================
+   1. Palette and layout tokens
+   Edit these values to change the site's colours and spacing.
+   ============================================================ */
 :root {
-  --primary: #2E8B57;       /* SeaGreen */
-  --primary-light: #20B2AA; /* LightSeaGreen */
-  --accent: #C7446D;        /* Magenta */
-  --accent-dark: #8B008B;   /* DarkMagenta */
-  --background: #FAFAFA;
+  --primary: #2e8b57;
+  --primary-dark: #226b43;
+  --primary-light: #eef6f0;
+  --accent: #a83057;
+  --accent-dark: #8b008b;
+  --background: #fafafa;
+  --surface: #ffffff;
   --text: #333333;
+  --muted: #606060;
+  --border: #dce5df;
+  --content-width: 1040px;
+  --radius: 8px;
 }
 
-/* ==============================
-   BODY STRUCTURE
-   ============================== */
+/* ============================================================
+   2. Base styles and accessibility
+   ============================================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 24px;
+}
+
 body {
-  font-family: system-ui, sans-serif;
-  max-width: 800px;
-  margin: 40px auto;
-  line-height: 1.6;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 32px 24px;
   color: var(--text);
-  background-color: var(--background);
-  padding: 0 20px;
+  background: var(--background);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
-/* ==============================
-   HEADER & MAIN NAV
-   ============================== */
-header {
-  text-align: center;
-  margin-bottom: 50px;
-  border-bottom: 3px solid var(--primary);
-  padding-bottom: 15px;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent-dark);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: -9999px;
+  z-index: 1;
+  padding: 8px 16px;
+  color: white;
+  background: var(--primary-dark);
+}
+
+.skip-link:focus {
+  left: 16px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: 2.2em;
-  color: var(--primary);
-  margin-bottom: 0.2em;
+  margin: 0 0 24px;
+  color: var(--primary-dark);
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
 }
 
-nav {
-  margin-top: 10px;
+h2 {
+  margin: 0 0 20px;
+  color: var(--primary-dark);
+  font-size: 1.55rem;
 }
 
-nav a {
-  margin: 0 12px;
-  text-decoration: none;
-  color: var(--primary);
-  font-weight: 500;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
-}
-
-nav a:hover {
+h3 {
+  margin: 26px 0 12px;
   color: var(--accent);
-  border-bottom: 2px solid var(--accent);
+  font-size: 1.15rem;
 }
 
-/* ==============================
-   ALL-PURPOSE NAV
-   ============================== */
-
-.allpurpose-nav {
-  text-align: center;
-  margin: 1.5em auto;
-   width: 100%;
-  font-size: 1.1em;
+p {
+  margin: 0 0 16px;
 }
 
-.allpurpose-nav a{
-  color: var(--primary);
-  text-decoration: none;
-  margin: 0 0.5em;
-   transition: color 0.2s ease, border-bottom 0.2s ease;
+ul {
+  padding-left: 24px;
 }
 
-/* Visited */
-.allpurpose-nav a:visited {
-  color: var(--primary);
-}
-
-/* hover */
-
-.allpurpose-nav a:hover {
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
-  text-decoration: none;
-}
-
-/* ==============================
-   CONTENT
-   ============================== */
-main h2 {
-  color: var(--primary);
-  margin-top: 30px;
-}
-
-main h3 {
-  color: var(--accent);
-  margin-top: 30px;
-}
-
-main p {
-  margin-bottom: 1.2em;
-}
-
-main a,
-main a:visited {
-  color: var(--accent-dark);
-  text-decoration: none;
-}
-
-main a:hover {
-  color: var(--primary-light);
-  text-decoration: underline;
+li + li {
+  margin-top: 8px;
 }
 
 strong {
-  color: var(--primary);
+  font-weight: 650;
 }
 
-.photo {
-  display: block;
-  margin: 0 auto 20px
-  max-width: 50%;
-}
-
-/* ==============================
-   FOOTER
-   ============================== */
-footer {
+/* ============================================================
+   3. Shared header, main navigation and footer
+   ============================================================ */
+.site-header {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 3px solid var(--primary);
   text-align: center;
-  margin-top: 60px;
-  font-size: 0.9em;
-  color: #777;
-  border-top: 1px solid #ccc;
-  padding-top: 20px;
 }
 
-footer a {
-  color: var(--accent-dark);
+.site-name {
+  color: var(--primary);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.3;
   text-decoration: none;
 }
 
-footer a:hover {
-  color: var(--primary-light);
+.site-tagline {
+  margin: 8px 0 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+}
+
+.site-nav a {
+  padding: 4px 0;
+  color: var(--primary-dark);
+  border-bottom: 2px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.site-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ============================================================
+   4. Page sections and section navigation
+   ============================================================ */
+main > section + section {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 28px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--primary);
+  background: var(--primary-light);
+}
+
+.section-nav a {
+  color: var(--primary-dark);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.section-nav a:hover {
   text-decoration: underline;
 }
 
-/* ==============================
-   BUTTONS & HIGHLIGHTS
-   ============================== */
-button, .btn {
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+.page-intro {
+  max-width: 78ch;
+  margin-bottom: 32px;
+  color: var(--muted);
 }
 
-button:hover, .btn:hover {
-  background-color: var(--accent-dark);
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.55;
 }
 
-/* ==============================
-   IMAGE LINKS
-   ============================== */
+.eyebrow {
+  color: var(--primary-dark);
+  font-size: 0.9rem;
+  font-weight: 650;
+}
 
-.image-link img {
-  max-width: 200px;
+/* ============================================================
+   5. Homepage portrait, cards and action links
+   ============================================================ */
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: start;
+  gap: 36px;
+}
+
+.profile-photo {
+  width: 280px;
   height: auto;
-  display: block;
-  margin: 1em auto;
-  transition: transform 0.25s ease;
+  border-radius: var(--radius);
 }
 
-.image-link img:hover {
-  transform: scale(1.1);
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-/* ==============================
-   CONTACTS
-   ============================== */
-#contacts {
-  text-align: center;
-  margin: 50px 0;
+.card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.action-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 5px;
+  color: white;
+  background: var(--primary-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: white;
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.button-secondary {
+  color: var(--primary-dark);
+  background: var(--surface);
+}
+
+/* ============================================================
+   6. Extended activity records and academic overview
+   ============================================================ */
+.entry {
+  margin-top: 20px;
+  padding-left: 20px;
+  border-left: 2px solid var(--border);
+}
+
+.entry + .entry {
+  margin-top: 28px;
+}
+
+.entry-date {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.entry h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.citation {
+  max-width: 88ch;
+  margin-bottom: 24px;
+}
+
+.citation strong {
+  color: var(--primary-dark);
+}
+
+.timeline {
+  list-style: none;
+  padding-left: 20px;
+  border-left: 2px solid var(--border);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 12px 24px;
+}
+
+.skills-list dt {
+  color: var(--primary-dark);
+  font-weight: 650;
+}
+
+.skills-list dd {
+  margin: 0;
+}
+
+details {
+  margin-top: 12px;
+}
+
+summary {
+  color: var(--primary-dark);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+details[open] summary {
+  margin-bottom: 12px;
+}
+
+.archive-details {
+  margin-top: 28px;
+}
+
+/* ============================================================
+   7. Contacts
+   ============================================================ */
+.contact-emails {
+  margin: 28px 0;
 }
 
 .contact-links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
+  gap: 16px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 130px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-size: 0.95rem;
+  text-decoration: none;
 }
 
 .contact-icon {
-  height: 60px;
-  transition: transform 0.2s ease;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
-.contact-icon:hover {
-  transform: scale(1.1);
+/* ============================================================
+   8. Narrow screens
+   ============================================================ */
+@media (max-width: 720px) {
+  body {
+    padding: 24px 18px;
+  }
+
+  .intro-grid,
+  .card-grid,
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-grid {
+    gap: 24px;
+  }
+
+  .profile-photo {
+    width: min(100%, 360px);
+  }
+
+  .site-nav {
+    gap: 8px 14px;
+  }
+
+  .skills-list {
+    gap: 6px;
+  }
+
+  .skills-list dd {
+    margin-bottom: 16px;
+  }
+
+  .contact-card {
+    flex: 1 1 130px;
+  }
 }
 
-.contact-emails {
-  margin-top: 30px;
+/* ============================================================
+   9. Print-friendly academic records
+   ============================================================ */
+@media print {
+  body {
+    max-width: none;
+    padding: 0;
+    color: black;
+    background: white;
+    font-size: 10pt;
+  }
+
+  .site-nav,
+  .section-nav,
+  .skip-link,
+  .action-links,
+  .site-footer {
+    display: none;
+  }
+
+  .site-header {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  h2,
+  h3,
+  .entry-date {
+    break-after: avoid;
+  }
+
+  .entry,
+  .citation,
+  .card {
+    break-inside: avoid;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
-.contact-emails a:hover {
-  color: var(--primary-light);
-  text-decoration: underline;
-}
-
-.contact-emails p {
-  margin: 5px 0;
-  font-size: 1.1rem;
-}
-
-.contact-invite {
-  margin-top: 25px;
-  font-style: italic;
-  font-size: 1.2rem;
+/* Collaborators are secondary to an activity's title. */
+.contributors {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
